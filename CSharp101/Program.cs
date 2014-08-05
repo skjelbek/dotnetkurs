@@ -9,17 +9,14 @@ namespace CSharp101
     {
         static void Main(string[] args)
         {
-            /*
-            Oppgave1();
-            Oppgave2til3();
-            Oppgave4til5();
-            Oppgave6();
-            Oppgave7();
-            Oppgave8();
-            Oppgave9();
-            Oppgave10();
-             */
-            Oppgave11();
+            //Oppgave1();
+            //Oppgave2til3();
+            //Oppgave4til5();
+            //Oppgave6();
+            //Oppgave7();
+            //Oppgave8();
+            //Oppgave9();
+            //Oppgave10();
 
             Console.ReadLine();
         }
@@ -35,7 +32,7 @@ namespace CSharp101
         {
             Console.WriteLine("Oppgave 2 til 3");
             var person = new Person {
-                Name = "Jonas"
+                Name = "Lars"
             };
 
             person.Log();
@@ -127,31 +124,15 @@ namespace CSharp101
             var personer = LagPersoner();
 
             var suspects = personer.Where(p => p.Height > 180 & p.HairColor == "Brun");
-            foreach(var suspect in suspects)
+            foreach (var suspect in suspects)
                 Console.WriteLine(suspect.ToString());
             Console.WriteLine();
 
             Console.WriteLine("Oppgave 10.2");
             var names = personer.Select(p => p.Name);
-            foreach(var name in names)
+            foreach (var name in names)
                 Console.WriteLine(name);
             Console.WriteLine();
-        }
-
-        public static async void Oppgave11()
-        {
-            var url = "https://raw.github.com/bekkopen/dotnetkurs/master/PersonPhoneApp/Persons.json";
-
-            var client = new HttpClient();
-
-            Task<string> contentTask = client.GetStringAsync(url);
-
-            Console.WriteLine("Last ned fil fra {0}", url);
-
-            string personer = await contentTask;
-
-            Console.WriteLine("Personer fra fil:");
-            Console.WriteLine(personer);
         }
 
         private static Person[] LagPersoner()
@@ -163,7 +144,7 @@ namespace CSharp101
                 new Person { Name="Cruella De Vil", Age=65, HairColor="Svart og hvitt", Height=168, Behavior=GoodEvil.Evil, Gender="K"},
                 new Person { Name="Orochimaru", Age=100, HairColor="Svart", Height=180, Behavior=GoodEvil.Evil, Gender="M"},
                 new Person { Name="Harvey Dent", Age=56, HairColor="Brun", Height=183, Behavior=GoodEvil.Good, Gender="M"},
-                new Person { Name="KongenDin", Age=75, HairColor="Ukjent", Height=150, Behavior=GoodEvil.Good, Gender="M"}
+                new Person { Name="KongenDin", Age=77, HairColor="Ukjent", Height=150, Behavior=GoodEvil.Good, Gender="M"}
             };
             return personer;
         }      
